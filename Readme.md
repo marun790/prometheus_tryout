@@ -1,3 +1,5 @@
+**This app is about setting up a spring boot app with prometheus**
+
 you can import this application in intellij and run the application
 
 **below are the instrumentation which enables the application to emmit the prometheus metrics**
