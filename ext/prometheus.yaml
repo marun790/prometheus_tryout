@@ -8,13 +8,18 @@ rule_files:
 
 # A scrape configuration containing exactly one endpoint to scrape:
 scrape_configs:
-  - job_name: 'prometheus'
-
+  - job_name: 'prometheus'             # job which monitor prometheus itself
     static_configs:
       - targets: ['127.0.0.1:9090']
 
-  - job_name: 'spring-actuator'
+  - job_name: 'spring-actuator'         # job which monitor the app
     metrics_path: '/actuator/prometheus'
     scrape_interval: 5s
     static_configs:
       - targets: ['192.168.106.1:8080'] # refer system ip address rather that localhost
+
+  - job_name: 'my_mac'                  # job which monitor your machine
+    metrics_path: '/metrics'
+    scrape_interval: 5s
+    static_configs:
+      - targets: [ '192.168.106.1:9100' ] # refer system ip address rather that localhost

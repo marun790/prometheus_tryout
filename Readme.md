@@ -25,5 +25,13 @@ In below change your 'APPLICATION_DIRECTORY'
 
 check [prometheus](http://localhost:9090/graph) you should be able to view the prometheus UI and you can play with promql
 
+Now let's add node exporter for your machine
+
+if you have brew you can install using below command
+
+`brew install node_exporter`  
+
+`brew services start node_exporter`
 
 
+` - job_name: 'my_mac' ` in `[APPLICATION_DIRECTORY]/ext/prometheus.yaml` will help prometheus to scrab metrics of host machine which is your Mac
