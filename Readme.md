@@ -17,14 +17,6 @@ colima start
 `
 checkout the file [ext/prometheus.yaml](prometheus.yaml), at line No 20 change your ip address
 
-In below change your 'APPLICATION_DIRECTORY'
-
-`docker run -d --name=prometheus -p 9090:9090 \
-    -v [APPLICATION_DIRECTORY]/ext/prometheus.yaml:/etc/prometheus/prometheus.yml prom/prometheus \
-    --config.file=/etc/prometheus/prometheus.yml`
-
-check [prometheus](http://localhost:9090/graph) you should be able to view the prometheus UI and you can play with promql
-
 Now let's add node exporter for your machine
 
 if you have brew you can install using below command
@@ -35,3 +27,12 @@ if you have brew you can install using below command
 
 
 ` - job_name: 'my_mac' ` in `[APPLICATION_DIRECTORY]/ext/prometheus.yaml` will help prometheus to scrab metrics of host machine which is your Mac
+
+
+In below change your 'APPLICATION_DIRECTORY'
+
+`docker run -d --name=prometheus -p 9090:9090 \
+-v [APPLICATION_DIRECTORY]/ext/prometheus.yaml:/etc/prometheus/prometheus.yml prom/prometheus \
+--config.file=/etc/prometheus/prometheus.yml`
+
+check [prometheus](http://localhost:9090/graph) you should be able to view the prometheus UI and you can play with promql
