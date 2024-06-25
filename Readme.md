@@ -35,6 +35,4 @@ In below change your 'APPLICATION_DIRECTORY'
 -v [APPLICATION_DIRECTORY]/ext/prometheus.yaml:/etc/prometheus/prometheus.yml prom/prometheus \
 --config.file=/etc/prometheus/prometheus.yml`
 
-test
-
 check [prometheus](http://localhost:9090/graph) you should be able to view the prometheus UI and you can play with promql
