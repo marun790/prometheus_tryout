@@ -21,7 +21,7 @@ Now let's add node exporter for your machine
 
 if you have brew you can install using below command
 
-`brew install node_exporter`  
+`brew install node_exporter`
 
 `brew services start node_exporter`
 
@@ -34,5 +34,7 @@ In below change your 'APPLICATION_DIRECTORY'
 `docker run -d --name=prometheus -p 9090:9090 \
 -v [APPLICATION_DIRECTORY]/ext/prometheus.yaml:/etc/prometheus/prometheus.yml prom/prometheus \
 --config.file=/etc/prometheus/prometheus.yml`
+
+test
 
 check [prometheus](http://localhost:9090/graph) you should be able to view the prometheus UI and you can play with promql
